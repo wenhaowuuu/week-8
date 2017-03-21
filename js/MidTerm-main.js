@@ -15,11 +15,28 @@ var parsedData;
 var dataset = "https://raw.githubusercontent.com/wenhaowuuu/MidTermFinal/master/data/EconomicIndicator_Chinesecities.geojson";
 
 //set up map
-
 // var map = L.map('map', {
 //   center: [32.9670, 117.5370],
 //   zoom: 5
 // });
+
+
+mapboxgl.accessToken = 'pk.eyJ1Ijoid2VuaGFvYnJpYW4iLCJhIjoiY2owaXNrNzhnMDB4ZjJxdGoxdHdkd2VibiJ9.Cn_2Ypo7UctdNZHt6OlDHA';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/basic-v9',
+    center: [117.9670, 38.5370],
+    zoom: 4
+});
+
+var i = 0;
+$('#style').click(function(){
+  i++;
+  if (i%2 === 0){
+    map.setStyle('mapbox://styles/mapbox/dark-v9');
+  }
+  else map.setStyle('mapbox://styles/mapbox/light-v9');
+});
 
 // var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
 //   attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
@@ -49,7 +66,6 @@ var clickNextButton = function(){
 
     $('.explanation').empty();
     $('.explanation').append(html);
-
     $('#previous').show();
 
     map.removeLayer(layerMappedMarkers);

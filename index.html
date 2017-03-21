@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <!-- CSS Imports -->
@@ -37,28 +36,6 @@
         <div class='explanation'>
         </div>
     </div>
-    <script>
-    //question: what do the html within "script" do?
-    //
-    // mapboxgl.accessToken = 'pk.eyJ1Ijoid2VuaGFvYnJpYW4iLCJhIjoiY2owaXNrNzhnMDB4ZjJxdGoxdHdkd2VibiJ9.Cn_2Ypo7UctdNZHt6OlDHA';
-    mapboxgl.accessToken = 'pk.eyJ1Ijoid2VuaGFvYnJpYW4iLCJhIjoiY2owaXNrNzhnMDB4ZjJxdGoxdHdkd2VibiJ9.Cn_2Ypo7UctdNZHt6OlDHA'
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/basic-v9',
-        center: [32.9670, 117.5370],
-        zoom: 5
-    });
-
-    var i = 0;
-    $('#style').onclick = function(){
-      i++;
-      if (i%2 === 0){
-        map.setStyle('mapbox://styles/mapbox/dark-v9');
-      }
-      else map.setStyle('mapbox://styles/mapbox/light-v9');
-    };
-    
-    </script>
 
     <!-- Map -->
     <div id="map" style="position: absolute; right: 0; left: 400px; top: 0; bottom: 0;"></div>
